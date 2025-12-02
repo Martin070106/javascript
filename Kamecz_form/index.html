@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <from action="" method="post">
+        <span for="Vnev">Vezetéknév:</span>
+        <input type="text" name="Vnev" id="Vnev"><br></br>
+        <span for="Knev">Keresztnév:</span>
+        <input type="text" name="Knev" id="Knev"><br></br>
+        <span for="telefon">Telefonszám(mobil):</span>
+        <input type="tel" name="telefon" minlenght="16" maxlength="16" id="telefon" placehorder="0036-70-123-4567" pattern="[0-9]{4}-[0-9]{2}-[0-9]{3}-[0-9]{4}"><br></br>
+        <span for="szulhely">Születési hely</span>
+        <input type="text" name="szulhely" id="szulhely"><br></br>
+        <span for="szulido">Születési idő</span>
+        <input type="data" name="szulido" id="szulido"><br></br>
+        <button onclick="feltoltes()">Feltöltés</button>
+    </from>
+</body>
+</html>

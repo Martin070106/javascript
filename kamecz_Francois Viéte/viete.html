@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="viete.css">
+    <title>Francois Viéte és a másodfokú egyenlet</title>
+    <script>
+        function szamol(){
+            var a=document.getElementById("a").value;
+            var b=document.getElementById("b").value;
+            var c=document.getElementById("c").value;
+            var gysz;//gyök száma
+            if(isNaN(a)||isNaN(b)||isNaN(c)||a==""||b==""||c==""){
+                gysz="HIBA";
+                 document.getElementById("gyokokszama").innerHTML=gysz;  
+                 document.getElementById("x1x2").innerHTML="";  
+            }
+            else{
+                var a=parseFloat(a);
+                var b=parseFloat(b);
+                var c=parseFloat(c);
+                if(a==0)
+                    {
+                        if(b==0)
+                            {
+                                if(c==0)
+                                    {
+                                       document.getElementById("gyokokszama").innerHTML="Azonosság.Az egyenletnek bármelyik szám a megoldása.";  
+                                    }
+                                else
+                                    {
+                                      document.getElementById("gyokokszama").innerHTML="Ellentmondás.Nincs megoldás.";    
+                                    }
+                            }
+                         else
+                                    {
+                                        var x1=-c/b;                                     
+                                        document.getElementById("gyokokszama").innerHTML="Az egyenletnek egy megoldása van";
+                                         document.getElementById("x1x2").innerHTML="x="+x1;
+                                    }
+                    }
+                else
+                    {
+                       var d=b*b-4*a*c;
+                        if(d<0)
+                        {
+                            document.getElementById("gyokokszama").innerHTML="Az egyenletnek nincs megoldása a valós számok halmazán";
+                            document.getElementById("x1x2").innerHTML="?";
+                            
+                        }
+                        if(d==0)
+                            {
+                               document.getElementById("gyokokszama").innerHTML="Az egyenletnek egy megoldása van. x1=x2";
+                                x1=-b/2/a;
+                                document.getElementById("x1x2").innerHTML="x1=x2= "+x1;
+                            }
+                        if(d>0)
+                            {
+                               document.getElementById("gyokokszama").innerHTML="Az egyenletnek két megoldása van. x1 x2"; 
+                                x1=(-b+Math.sqrt(d))/2/a;
+                                var x2=(-b-Math.sqrt(d))/2/a;
+                                document.getElementById("x1x2").innerHTML="x1= "+x1+"  x2=  "+x2;
+                            }
+                    }
+                
+            }
+            
+        }
+        </script>
+</head>
+<body>
+    <h1>Francois viéte</h1>
+    <h2>(1540-1603)</h2>
+    <h2>francia matematikus</h2>
+    <h3>Életéről</h3>
+    <p>Foglalkozását tekintve jogász volt. Fiatal korában támadt egy ötlete új csillagászati elmélethez, amely a kopernikuszi rendszert fejlesztette volna tovább. Ennek érdekében kezdett el a matematikával foglalkozni. Tehetséges emberként kezdetben jogászként is sikeres pályája volt. III. Henrik, majd IV. Henrik francia király ügyésze és tanácsosa volt. Később kegyvesztett 
+    </p>
+    <img src="viete.png" alt="viete">
+        <h3>Munkásságáról</h3>
+        <p>
+            <ul>
+        <li> Kezdetben elsősorban trigonometriával foglalkozott.</li>
+        <li> 1584 és 1589 között, kegyvesztettsége idején írta meg fő művét az In artem analyticam isagoge-t. (Bevezetés az analízis tudományába).</li>
+        <li> Ez egy befejezetlensége ellenére is hatalmas munka, benne új algebrai megoldásokkal. Az egyenletmegoldás általános módszereit kereste. Ezért a Diophantosz által megkezdett úton az algebrai jelölésrendszert fejlesztette tovább.</li>
+        <li> Igyekezett szimbólumokkal dolgozni, az együtthatók helyett is betűket használt. Ezek segítségével formulát tudott felírni a másodfokú egyenletek megoldására.</li>
+        <li> A harmadfokú egyenletek megoldásával is foglalkozott.</li>
+        <li> Igen jelentős eredménye a végtelen sorozatok felfedezése.</li>
+        <li> Másodfokú egyenletek gyökök és együtthatók kapcsolatát megadó képletek, a Viete-formulák is őrzik a nevét.</li>
+            </ul>
+        </p>
+        
+        <h3>A másodfokú egyenlet</h3>
+        A másodfokú egyenlet általános alakja ax2+bx+c=0. Megoldó képlet:
+        <br>
+        <p> Ahol a gyök alatt álló kifejezés a diszkrimináns (D), ami meghatározza a valós gyökök számát. Ha D&lt;0, akkor nincs megoldás, ha D=0, akkor egy megoldás, ha D&gt;0, akkor két megoldás van.</p>
+        <p class="keplet"><img src="megoldokeplet.png"></p>
+    <form>
+    <p>a=<input type="text" size="5" id="a">b=<input type="text" size="5" id="b">c=<input type="text" size="5" id="c"><input type="button" value="Számol" onclick="szamol();"></p>
+    </form>
+  <h3>A valós gyökök száma: <label id="gyokokszama">?</label></h3>
+  <h3>Megoldás: <label id="x1x2">?</label></h3>
+</body>
+</html>
