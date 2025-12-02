@@ -1,0 +1,15 @@
+/* 3. Feladat */
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+}
+
+h1,
+h2 {
+    font-family: "Dancing Script", cursive;
+}
+
+/* 5. feladat */
+.btn1{
+    background-color: #910505!important;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mertek.css">
+    <script src="script.js"></script>
+    <title>Mértékegység</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>négyszögöl,</td>
+            <td><input type="text" id="ol" size="5" onblur="negysogol(1)" onfocus="this.value=''"></td>
+            <td><input type="button" value="átvált"></td>
+            <td>m<sup>2</sup></td>
+            <td><input type="text" id="nm" size="5" onblur="negysogol(2)" onfocus="this.value=''"></td>
+
+        <tr>
+            <td>mérföld</td>
+            <td><input type="text" id="mf" size="5" onblur="merfold(1)" onfocus="this.value=''"></td>
+            <td><input type="button" value="átvált"></td>
+            <td>km</td>
+            <td><input type="text" id="km" size="5" onblur="merfold(2)" onfocus="this.value=''"></td>
+        </tr>
+        <tr>
+            <td>lóerő</td>
+            <td><input type="text" id="le" size="5" onblur="loero(1)" onfocus="this.value=''"></td>
+            <td><input type="button" value="átvált"></td>
+            <td>kW</td>
+            <td><input type="text" id="kw" size="5" onblur="loero(2)" onfocus="this.value=''"></td>
+        </tr>
+        <tr>
+            <td>kcal</td>
+            <td><input type="text" id="kc" size="5" onblur="kcal(1)" onfocus="this.value=''"></td>
+            <td><input type="button" value="átvált"></td>
+            <td>kJ</td>
+            <td><input type="text" id="kj" size="5" onblur="kcal(2)" onfocus="this.value=''"></td>
+        </tr> 
+        </tr>
+    </table>
+</body>
+</html>
